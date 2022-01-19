@@ -1,0 +1,21 @@
+name: 'Notify Teams'
+branding :
+    icon : 'send'
+    color : 'blue'
+description: 'Sending a notification to Microsoft Teams Channel'
+inputs:
+    themeColor:
+        description: Hex color code of notification theme 
+        required: false
+    teams_webhook_url:
+        description: WebHook URL of your MS Teams Channel
+        required: false
+    message:
+        description: Message to be sent
+        required: false
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    # args:
+        # - ${{ inputs.teams_webhook_url }}
+        # - '${{ inputs.message }}'

@@ -1,0 +1,29 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "ffa500",
+    "summary": "{{ env.GITHUB_WORKFLOW }} {{env.input_tag}}",
+    "sections": [{
+        "activityTitle": "&#x270B; {{ env.GITHUB_WORKFLOW }} {{env.input_tag}} is starting ...",
+        "activitySubtitle": "Enviroment is unavailable",
+        "activityImage": "",
+        "facts": [{
+            "name": "Database drop:",
+            "value": "False"
+        }, {
+            "name": "Release branch:",
+            "value": "{{ env.input_tag }}"
+        }, {
+            "name": "Status:",
+            "value": "Running &#x1F41D;"
+        }]
+    }],
+    "potentialAction": [{
+        "@type": "OpenUri",
+        "name": "View Workflow Run",
+        "targets": [{
+            "os": "default",
+            "uri": "https://github.com/sky-distribution/DevOps/actions"
+        }]
+    }
+]}
